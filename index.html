@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Links</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .file-link {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            text-decoration: none;
+            color: #007bff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        .file-link:hover {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <h1>Available Files</h1>
+    {% for file in files %}
+        <a href="{{ url_for('show_file', filename=file) }}" class="file-link">{{ file }}</a>
+    {% endfor %}
+</body>
+</html>
